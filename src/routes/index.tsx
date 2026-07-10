@@ -13,24 +13,11 @@ import {
   Palmtree,
   ClipboardList,
   Calculator,
-  CheckCircle2,
   ArrowRight,
   Quote,
 } from "lucide-react";
-import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Toaster } from "@/components/ui/sonner";
 
 import logoAsset from "@/assets/logo.png.asset.json";
 import heroAsset from "@/assets/project-excavation.jpg.asset.json";
@@ -149,7 +136,6 @@ const TESTIMONIALS = [
 function Index() {
   return (
     <div id="home" className="min-h-screen bg-background text-foreground">
-      <Toaster position="top-center" richColors />
       <Navbar />
       <Hero />
       <About />
