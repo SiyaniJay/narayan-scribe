@@ -84,14 +84,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Narayan Builders Ltd is a Mombasa-based construction firm delivering residential, commercial, and hospitality projects across the Kenyan coast.",
       },
       { name: "author", content: "Narayan Builders Ltd" },
-      { property: "og:title", content: "Narayan Builders Ltd — Building Quality, Delivering Trust" },
+      { property: "og:title", content: "Narayan Builders Ltd — Construction in Mombasa, Kenya" },
       {
         property: "og:description",
         content:
-          "Residential, commercial, and renovation construction across Mombasa and the Kenyan coast.",
+          "Narayan Builders Ltd is a Mombasa-based construction firm delivering residential, commercial, and hospitality projects across the Kenyan coast.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Narayan Builders Ltd — Construction in Mombasa, Kenya" },
+      { name: "twitter:description", content: "Narayan Builders Ltd is a Mombasa-based construction firm delivering residential, commercial, and hospitality projects across the Kenyan coast." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9fec9c62-ce0a-42a6-bbbb-c6b3472afb54/id-preview-40acdcb1--d501fb72-9f5e-49fa-939c-26f8a3859a26.lovable.app-1783670464512.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9fec9c62-ce0a-42a6-bbbb-c6b3472afb54/id-preview-40acdcb1--d501fb72-9f5e-49fa-939c-26f8a3859a26.lovable.app-1783670464512.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
