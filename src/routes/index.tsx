@@ -507,14 +507,12 @@ function Contact() {
             Request a quote or start a conversation.
           </h2>
           <p className="mt-4 text-base text-muted-foreground">
-            Tell us about your project and we'll get back to you within one business day.
+            Reach out directly by phone or email — we reply within one business day.
           </p>
         </div>
 
-        <div className="mt-14 grid gap-10 lg:grid-cols-5">
-          <ContactForm />
-
-          <div className="space-y-5 lg:col-span-2">
+        <div className="mt-14 grid gap-8 md:grid-cols-2">
+          <div className="grid gap-5 sm:grid-cols-2">
             <ContactCard
               icon={Phone}
               title="Call us"
@@ -537,18 +535,18 @@ function Contact() {
               title="Business Hours"
               value="Mon–Sat · 8:00 AM – 5:30 PM"
             />
+          </div>
 
-            <div className="overflow-hidden rounded-2xl border border-border">
-              <iframe
-                title="Narayan Builders location — Mombasa"
-                src="https://www.google.com/maps?q=Mombasa,Kenya&output=embed"
-                width="100%"
-                height="240"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="block border-0"
-              />
-            </div>
+          <div className="overflow-hidden rounded-2xl border border-border">
+            <iframe
+              title="Narayan Builders location — Mombasa"
+              src="https://www.google.com/maps?q=Mombasa,Kenya&output=embed"
+              width="100%"
+              height="100%"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="block min-h-[260px] border-0"
+            />
           </div>
         </div>
       </div>
@@ -568,7 +566,7 @@ function ContactCard({
   href?: string;
 }) {
   const content = (
-    <div className="flex items-start gap-4 rounded-2xl border border-border bg-background p-5 transition-colors hover:border-accent/50">
+    <div className="flex h-full items-start gap-4 rounded-2xl border border-border bg-background p-5 transition-colors hover:border-accent/50">
       <div className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground">
         <Icon className="h-5 w-5" />
       </div>
@@ -576,117 +574,11 @@ function ContactCard({
         <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
           {title}
         </div>
-        <div className="mt-1 truncate text-base font-medium text-primary">{value}</div>
+        <div className="mt-1 text-base font-medium text-primary">{value}</div>
       </div>
     </div>
   );
   return href ? <a href={href}>{content}</a> : content;
-}
-
-function ContactForm() {
-  const [submitting, setSubmitting] = useState(false);
-
-  return (
-    <form
-      className="rounded-2xl border border-border bg-background p-6 sm:p-8 lg:col-span-3"
-      onSubmit={(e) => {
-        e.preventDefault();
-        const form = e.currentTarget;
-        const data = new FormData(form);
-        const name = String(data.get("name") || "").trim();
-        const email = String(data.get("email") || "").trim();
-        const message = String(data.get("message") || "").trim();
-        if (!name || !email || !message) {
-          toast.error("Please fill in your name, email, and a short message.");
-          return;
-        }
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-          toast.error("Please enter a valid email address.");
-          return;
-        }
-        setSubmitting(true);
-        setTimeout(() => {
-          setSubmitting(false);
-          form.reset();
-          toast.success("Thanks! We'll get back to you within one business day.");
-        }, 600);
-      }}
-    >
-      <div className="grid gap-5 sm:grid-cols-2">
-        <Field label="Full Name" htmlFor="name">
-          <Input id="name" name="name" required maxLength={100} placeholder="Jane Doe" />
-        </Field>
-        <Field label="Email" htmlFor="email">
-          <Input id="email" name="email" type="email" required maxLength={200} placeholder="jane@example.com" />
-        </Field>
-        <Field label="Phone" htmlFor="phone">
-          <Input id="phone" name="phone" type="tel" maxLength={30} placeholder="+254 …" />
-        </Field>
-        <Field label="Project Type" htmlFor="type">
-          <Select name="type">
-            <SelectTrigger id="type">
-              <SelectValue placeholder="Select project type" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="residential">Residential Construction</SelectItem>
-              <SelectItem value="commercial">Commercial Construction</SelectItem>
-              <SelectItem value="renovation">Renovation / Fit-Out</SelectItem>
-              <SelectItem value="hospitality">Resort / Hospitality</SelectItem>
-              <SelectItem value="consulting">Quotation / Consulting</SelectItem>
-              <SelectItem value="other">Other</SelectItem>
-            </SelectContent>
-          </Select>
-        </Field>
-      </div>
-
-      <div className="mt-5">
-        <Field label="Message" htmlFor="message">
-          <Textarea
-            id="message"
-            name="message"
-            required
-            maxLength={1500}
-            rows={5}
-            placeholder="Tell us about your project — location, scope, timelines…"
-          />
-        </Field>
-      </div>
-
-      <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
-        <p className="flex items-center gap-2 text-xs text-muted-foreground">
-          <CheckCircle2 className="h-4 w-4 text-accent" />
-          We reply within one business day.
-        </p>
-        <Button
-          type="submit"
-          disabled={submitting}
-          size="lg"
-          className="bg-accent text-accent-foreground hover:bg-accent-hover"
-        >
-          {submitting ? "Sending…" : "Send Request"}
-        </Button>
-      </div>
-    </form>
-  );
-}
-
-function Field({
-  label,
-  htmlFor,
-  children,
-}: {
-  label: string;
-  htmlFor: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="space-y-2">
-      <Label htmlFor={htmlFor} className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-        {label}
-      </Label>
-      {children}
-    </div>
-  );
 }
 
 /* ---------------- Footer ---------------- */
