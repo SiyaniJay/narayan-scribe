@@ -243,9 +243,8 @@ function Hero() {
           <span className="inline-flex items-center rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium tracking-wide text-white/90 backdrop-blur">
             Mombasa · Kenyan Coast
           </span>
-          <h1 className="mt-5 text-4xl font-extrabold leading-[1.05] text-white sm:text-5xl lg:text-6xl">
-            Building Mombasa's Future,
-            <br />
+          <h1 className="mt-5 text-3xl font-extrabold leading-[1.1] text-white break-words sm:text-5xl lg:text-6xl">
+            Building Mombasa's Future,{" "}
             <span className="text-accent">One Project at a Time.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-white/85">
