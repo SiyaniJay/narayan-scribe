@@ -573,7 +573,7 @@ function ContactCard({
         <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
           {title}
         </div>
-        <div className="mt-1 text-base font-medium text-primary">{value}</div>
+        <div className="mt-1 break-words text-base font-medium text-primary">{value}</div>
       </div>
     </div>
   );
