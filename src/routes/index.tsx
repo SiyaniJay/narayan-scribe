@@ -19,12 +19,12 @@ import {
 
 import { Button } from "@/components/ui/button";
 
-import logoAsset from "@/assets/logo.png.asset.json";
-import heroAsset from "@/assets/project-excavation.jpg.asset.json";
-import yardAsset from "@/assets/project-yard.jpg.asset.json";
-import petrocity1 from "@/assets/project-petrocity-1.png.asset.json";
-import petrocity2 from "@/assets/project-petrocity-2.png.asset.json";
-import resortAsset from "@/assets/project-resort.jpg.asset.json";
+const logoAsset = { url: "/images/logo.png" };
+const heroAsset = { url: "/images/project-excavation.jpg" };
+const yardAsset = { url: "/images/project-yard.jpg" };
+const petrocity1 = { url: "/images/project-petrocity-1.png" };
+const petrocity2 = { url: "/images/project-petrocity-2.png" };
+const resortAsset = { url: "/images/project-resort.jpg" };
 
 export const Route = createFileRoute("/")({
   component: Index,
