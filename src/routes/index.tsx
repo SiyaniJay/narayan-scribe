@@ -19,12 +19,12 @@ import {
 
 import { Button } from "@/components/ui/button";
 
-import logoAsset from "@/assets/logo.png.asset.json";
-import heroAsset from "@/assets/project-excavation.jpg.asset.json";
-import yardAsset from "@/assets/project-yard.jpg.asset.json";
-import petrocity1 from "@/assets/project-petrocity-1.png.asset.json";
-import petrocity2 from "@/assets/project-petrocity-2.png.asset.json";
-import resortAsset from "@/assets/project-resort.jpg.asset.json";
+const logoAsset = { url: "/images/logo.png" };
+const heroAsset = { url: "/images/project-excavation.jpg" };
+const yardAsset = { url: "/images/project-yard.jpg" };
+const petrocity1 = { url: "/images/project-petrocity-1.png" };
+const petrocity2 = { url: "/images/project-petrocity-2.png" };
+const resortAsset = { url: "/images/project-resort.jpg" };
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -243,9 +243,8 @@ function Hero() {
           <span className="inline-flex items-center rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium tracking-wide text-white/90 backdrop-blur">
             Mombasa · Kenyan Coast
           </span>
-          <h1 className="mt-5 text-4xl font-extrabold leading-[1.05] text-white sm:text-5xl lg:text-6xl">
-            Building Mombasa's Future,
-            <br />
+          <h1 className="mt-5 text-3xl font-extrabold leading-[1.1] text-white break-words sm:text-5xl lg:text-6xl">
+            Building Mombasa's Future,{" "}
             <span className="text-accent">One Project at a Time.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-white/85">
@@ -574,7 +573,7 @@ function ContactCard({
         <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
           {title}
         </div>
-        <div className="mt-1 text-base font-medium text-primary">{value}</div>
+        <div className="mt-1 break-words text-base font-medium text-primary">{value}</div>
       </div>
     </div>
   );
