@@ -316,10 +316,8 @@ function About() {
             A family-run construction firm rooted in Mombasa.
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-            Narayan Builders Ltd is led by its founder alongside his son, now
-            Director of Operations & Technology. We combine decades of hands-on
-            building experience with a modern, technology-driven approach to
-            project management and client communication.
+            Narayan Builders Ltd is led by Lalji Siyani alongside a team of highly experienced construction and project management professionals. We combine decades of hands-on building expertise with a modern, technology-driven approach to project delivery, site management, and seamless client communication.
+Our strength lies in our dedicated workforce—seasoned engineers, architects, and skilled tradespeople who uphold the highest standards of professional ethics, integrity, and safety across every build. Proudly rooted in the region, we prioritize a "Kenya First" strategy by sourcing local talent, utilizing quality domestic materials, and delivering sustainable infrastructure designed specifically for local communities and client needs.
           </p>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
             From private homes and commercial developments to resort renovations,
